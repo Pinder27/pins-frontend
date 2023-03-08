@@ -1,24 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import React,{useState} from 'react';
+import Themap from './components/themap'
+import Login from './components/login';
+
 
 function App() {
+    const [user, setUser] = useState(null)
+    console.log(localStorage.getItem('username'));
+    if(!user)
+    if(localStorage.getItem('username')){
+      setUser(localStorage.getItem('username'));
+    }
+    
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    
+     {!user&&<Login setUser = {setUser}/>} 
+     {user&&<Themap username={user} setUser = {setUser}/>}
+    </>
   );
 }
 
