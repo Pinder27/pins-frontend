@@ -29,7 +29,7 @@ const login = (props) => {
     }
     return (
         <>
-        {signinPage&&<Signup setLoginPage={setLoginPage} setSigninPage={setSigninPage} loginPage={loginPage} signinPage={signinPage}/>}
+        {signinPage&&<Signup setLoginPage={setLoginPage} setSigninPage={setSigninPage} loginPage={loginPage} signinPage={signinPage} setUser={props.setUser}/>}
 
         {loginPage&& <div className='formbox'>
             <div className="login-box">
