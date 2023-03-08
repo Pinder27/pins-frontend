@@ -37,7 +37,6 @@ const themap = (props) => {
   }, []);
 
   useEffect(() => {
-    console.log('these are-' + pins);
     pins.map((pin) => {
       const innerHtmlContent = `<div>
     <h3 class='popup-heading'>${pin.title} </h3>
@@ -227,7 +226,7 @@ const themap = (props) => {
                 <textarea className='textarea-popup' type="text" ref={popup_desc} name="" required="" />
                 <label>Description</label>
               </div>
-              <a href="#" onClick={handleSave}>
+              <a href="/#" onClick={handleSave}>
                 <span></span>
                 <span></span>
                 <span></span>

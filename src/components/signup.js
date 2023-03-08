@@ -1,20 +1,15 @@
 import axios from 'axios'
-import React, { useRef,useState } from 'react'
+import React, { useRef} from 'react'
 import Login from './login';
 const signup = (props) => {
     const RefUsername = useRef(null);
     const RefEmail = useRef(null);
     const RefPassword = useRef(null);
 
-    //   const [message, setMessage] = useState({
-    //       username: " ",
-    //       password: " ",
-    //       email: " "
-    //   })
     const handleSubmit = async () => {
 
         try {
-            await axios.post(`${process.env.url}/user/register/`, {
+            await axios.post(`${process.env.REACT_APP_URL}/user/register/`, {
                 username: RefUsername.current.value,
                 email: RefEmail.current.value,
                 password: RefPassword.current.value
@@ -49,7 +44,7 @@ const signup = (props) => {
                         <input type="password" ref={RefPassword} name="" required="" />
                         <label>Password</label>
                     </div>
-                    <a href="#" onClick={handleSubmit}>
+                    <a href="/#" onClick={handleSubmit}>
                         <span></span>
                         <span></span>
                         <span></span>

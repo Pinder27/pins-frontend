@@ -7,16 +7,10 @@ const login = (props) => {
     const RefUsername = useRef(null);
     
     const RefPassword = useRef(null);
-
-    //   const [message, setMessage] = useState({
-    //       username: " ",
-    //       password: " ",
-    //       email: " "
-    //   })
     const handleSubmit = async () => {
 
         try {
-            await axios.post(`${process.env.url}/user/login/`, {
+            await axios.post(`${process.env.REACT_APP_URL}/user/login/`, {
                 username: RefUsername.current.value,
                 password: RefPassword.current.value
             })
@@ -49,7 +43,7 @@ const login = (props) => {
                         <input type="password" ref={RefPassword} name="" required="" />
                         <label>Password</label>
                     </div>
-                    <a href="#" onClick={handleSubmit}>
+                    <a href="/#" onClick={handleSubmit}>
                         <span></span>
                         <span></span>
                         <span></span>
